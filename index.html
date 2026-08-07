@@ -4,9 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Learning-to-Optimize for Robotics | IROS 2026</title>
+  <title>Learning-to-Optimize for Control in Robotics | IROS 2026</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -14,24 +22,53 @@
       background: #ffffff;
     }
 
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 22px;
+      padding: 14px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    nav a {
+      color: #102a43;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: #2563a8;
+    }
+
     header {
-      min-height: 75vh;
+      min-height: 74vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #102a43, #2563a8);
+      padding: 64px 20px;
+      background:
+        linear-gradient(rgba(16, 42, 67, 0.84), rgba(37, 99, 168, 0.76)),
+        url("assets/hero-robotics-l2o.png");
+      background-color: #102a43;
+      background-position: center;
+      background-size: cover;
       color: white;
     }
 
     .hero {
-      max-width: 900px;
+      max-width: 980px;
     }
 
     .label {
       margin-bottom: 16px;
-      font-size: 18px;
+      font-size: clamp(24px, 3vw, 36px);
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -45,9 +82,16 @@
 
     .subtitle {
       margin: 0 auto 32px;
-      max-width: 760px;
+      max-width: 780px;
       font-size: 22px;
       line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
     }
 
     .button {
@@ -60,15 +104,32 @@
       font-weight: 700;
     }
 
+    .button.primary {
+      background: #ffffff;
+      color: #102a43;
+    }
+
     main {
-      max-width: 1000px;
+      max-width: 1080px;
       margin: auto;
       padding: 70px 24px;
     }
 
+    section {
+      margin-bottom: 76px;
+      scroll-margin-top: 78px;
+    }
+
     h2 {
+      margin: 0 0 24px;
       font-size: 36px;
       color: #102a43;
+    }
+
+    h3 {
+      margin: 30px 0 12px;
+      font-size: 24px;
+      color: #1f2937;
     }
 
     p {
@@ -76,27 +137,136 @@
       line-height: 1.7;
     }
 
+    ul {
+      padding-left: 24px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .lead {
+      max-width: 880px;
+      font-size: 20px;
+    }
+
+    .info-grid,
+    .material-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .panel {
+      padding: 22px;
+      border: 1px solid #e5e7eb;
+      border-radius: 7px;
+      background: #f9fafb;
+    }
+
+    .panel h3 {
+      margin-top: 0;
+    }
+
+    .panel p {
+      margin-bottom: 0;
+    }
+
+    .schedule {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .schedule th,
+    .schedule td {
+      padding: 16px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .schedule th {
+      color: #102a43;
+      background: #f3f4f6;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 9px;
+      border-radius: 6px;
+      background: #e8f1fb;
+      color: #102a43;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 20px;
+      border-radius: 7px;
+      background: #f3f4f6;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     footer {
       padding: 30px;
       text-align: center;
       background: #f3f4f6;
     }
+
+    @media (max-width: 720px) {
+      nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+
+      header {
+        min-height: 66vh;
+      }
+
+      .subtitle {
+        font-size: 19px;
+      }
+
+      .schedule {
+        display: block;
+        overflow-x: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#contents">Contents</a>
+    <a href="#notebooks">Notebooks</a>
+    <a href="#slides">Slides</a>
+    <a href="#toolbox">Toolbox</a>
+    <a href="#organizers">Organizers</a>
+    <a href="#citation">Citation</a>
+  </nav>
+
   <header>
     <div class="hero">
       <div class="label">IROS 2026 Tutorial</div>
 
-      <h1>Learning-to-Optimize for Robotics</h1>
+      <h1>Learning-to-Optimize for Control in Robotics</h1>
 
       <p class="subtitle">
-        Theory, algorithms, and hands-on demonstrations for learning-accelerated
-        optimization and real-time robotic control.
+        A hands-on tutorial on learning-to-optimize methods for real-time MPC,
+        sampling-based control, and adaptive robotic control.
       </p>
 
-      <a class="button" href="#overview">Learn more</a>
+      <div class="hero-actions">
+        <a class="button primary" href="#schedule">View schedule</a>
+        <a class="button" href="#notebooks">Hands-on materials</a>
+      </div>
     </div>
   </header>
 
@@ -104,23 +274,234 @@
     <section id="overview">
       <h2>Overview</h2>
 
-      <p>
-        This tutorial introduces Learning-to-Optimize methods for accelerating
-        optimization-based robotic planning and control. Topics will include
-        parametric solution learning, algorithm unrolling, model predictive
-        control, sampling-based control, controller adaptation, and practical
+      <p class="lead">
+        This tutorial introduces learning-to-optimize (L2O) as a practical
+        framework for accelerating and improving optimization-based control in
         robotic applications.
       </p>
 
       <p>
-        The complete agenda, tutorial materials, software demonstrations, and
-        organizer information will be added soon.
+        The tutorial focuses on real-time model predictive control, efficient
+        sampling-based control, and learning-to-adapt methods for controllers
+        operating under changing dynamics and uncertain environments. The
+        hands-on examples will use the Ctrl-L2O toolbox to demonstrate these
+        ideas across robotic systems such as autonomous vehicles, quadrupedal
+        robots, and bipedal robots, with interfaces compatible with platforms
+        such as MuJoCo.
       </p>
+
+      <div class="info-grid">
+        <div class="panel">
+          <span class="tag">Format</span>
+          <h3>3-hour tutorial</h3>
+          <p>
+            Two one-hour sessions, each combining lecture material and coding
+            exercises, separated by a 30-minute break.
+          </p>
+        </div>
+
+        <div class="panel">
+          <span class="tag">Software</span>
+          <h3>Ctrl-L2O</h3>
+          <p>
+            Learning-to-optimize tools for robotic control, including examples
+            for MPC, MPPI, and adaptive parameter tuning.
+          </p>
+        </div>
+
+        <div class="panel">
+          <span class="tag">Audience</span>
+          <h3>Robotics, control, and ML</h3>
+          <p>
+            Designed for attendees interested in optimization-based control,
+            differentiable optimization, and deployable robotic learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <h2>Tentative Schedule</h2>
+
+      <table class="schedule">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Session</th>
+            <th>Objective</th>
+            <th>Key Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0:00-1:00</td>
+            <td><strong>Part I: Foundations of L2O for Optimization and Control</strong></td>
+            <td>Establish fundamental background for the rest of the tutorial.</td>
+            <td>MPC and MPPI, parametric optimization, L2O formulations and techniques.</td>
+          </tr>
+          <tr>
+            <td>1:00-1:30</td>
+            <td><strong>Coffee Break</strong></td>
+            <td>Informal Q&amp;A and networking.</td>
+            <td>Discussion with organizers and participants.</td>
+          </tr>
+          <tr>
+            <td>1:30-2:30</td>
+            <td><strong>Part II: Applications of L2O for Control in Robotics</strong></td>
+            <td>Show L2O applications in different robotic control problems.</td>
+            <td>Real-time MPC, MPPI sampling, learning-to-adapt, and automatic parameter tuning.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contents">
+      <h2>Tutorial Contents</h2>
+
+      <h3>Part I: Introduction and Foundations</h3>
+      <ul>
+        <li>Opening remarks and tutorial goals.</li>
+        <li>Why optimization is central to modern robotic control.</li>
+        <li>Why real-time control and adaptation create computational bottlenecks.</li>
+        <li>Parametric optimization as a unifying view for MPC, MPPI, and L2O.</li>
+        <li>Introduction to the Ctrl-L2O software toolbox.</li>
+      </ul>
+
+      <h3>Preliminaries on MPC and MPPI Control</h3>
+      <ul>
+        <li>Model predictive control and common MPC solver toolboxes.</li>
+        <li>Sampling-based MPC and model predictive path integral control.</li>
+        <li>Coding tutorial 1: MPC with numerical solvers and sampling-based methods.</li>
+      </ul>
+
+      <h3>L2O Methodologies for Parametric Optimization</h3>
+      <ul>
+        <li>Supervised and self-supervised learning for optimization.</li>
+        <li>Learning parametric solution maps and warm starts.</li>
+        <li>Algorithm unrolling and differentiable optimization layers.</li>
+        <li>Fixed-point and KKT-based differentiation.</li>
+        <li>Feasibility restoration and constraint handling.</li>
+        <li>Coding tutorial 2: Synthetic L2O examples for parametric optimization.</li>
+      </ul>
+
+      <h3>Part II: Applications in Control and Robotics</h3>
+      <ul>
+        <li>L2O for real-time MPC and warm-started numerical optimization.</li>
+        <li>Learning components that simplify mixed-integer or structured control problems.</li>
+        <li>L2O for MPPI and learned sampling distributions.</li>
+        <li>Learning terminal costs and constraints through sampling.</li>
+        <li>Learning-to-adapt nonlinear MPC parameters with Bayesian optimization.</li>
+        <li>Automatic tuning of linear MPC to approximate nonlinear MPC behavior.</li>
+        <li>Coding tutorial 3: Robotic demonstrations with Ctrl-L2O.</li>
+      </ul>
+    </section>
+
+    <section id="notebooks">
+      <h2>Hands-on Notebooks</h2>
+
+      <p>
+        The tutorial will include coding examples that move from basic
+        optimization-based control to L2O-enabled robotic demonstrations. Links
+        will be added as notebooks are finalized.
+      </p>
+
+      <div class="material-grid">
+        <div class="panel">
+          <span class="tag">Tutorial 1</span>
+          <h3>MPC and MPPI Basics</h3>
+          <p>
+            Numerical MPC solvers, sampling-based control, and baseline control
+            pipelines for robotic systems. Notebook coming soon.
+          </p>
+        </div>
+
+        <div class="panel">
+          <span class="tag">Tutorial 2</span>
+          <h3>Synthetic L2O Examples</h3>
+          <p>
+            Parametric optimization examples for supervised, self-supervised,
+            and unrolled learning-to-optimize methods. Notebook coming soon.
+          </p>
+        </div>
+
+        <div class="panel">
+          <span class="tag">Tutorial 3</span>
+          <h3>Robotics Demonstrations</h3>
+          <p>
+            Real-time MPC, MPPI sampling, learning-to-adapt, and automatic
+            controller tuning examples. Notebook coming soon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="slides">
+      <h2>Slides</h2>
+
+      <p>
+        Slides will be posted before the tutorial. The planned slide modules
+        follow the lecture and coding structure above.
+      </p>
+
+      <ul>
+        <li>Part I slides: Foundations of L2O for optimization and control.</li>
+        <li>Part II slides: Applications of L2O in control and robotics.</li>
+        <li>Hands-on slides: Setup, notebooks, and software demonstrations.</li>
+      </ul>
+    </section>
+
+    <section id="toolbox">
+      <h2>Software Toolbox</h2>
+
+      <p>
+        Ctrl-L2O is the companion software toolbox for the tutorial. It is
+        planned to provide learning-to-optimize tools for robotic control,
+        including examples for real-time MPC, MPPI, learning-to-adapt, and
+        automatic controller parameter tuning.
+      </p>
+
+      <p>
+        Installation instructions, dependencies, and reproducible environments
+        will be added as the software materials are prepared.
+      </p>
+    </section>
+
+    <section id="organizers">
+      <h2>Organizers</h2>
+
+      <p>
+        Organizer names, affiliations, and contact information will be added
+        here.
+      </p>
+    </section>
+
+    <section id="acknowledgments">
+      <h2>Acknowledgments</h2>
+
+      <p>
+        This tutorial is being developed for the IEEE/RSJ International
+        Conference on Intelligent Robots and Systems (IROS) 2026. Additional
+        acknowledgments will be added as the tutorial materials are finalized.
+      </p>
+    </section>
+
+    <section id="citation">
+      <h2>Citation</h2>
+
+      <p>If you find these materials useful, please cite the tutorial:</p>
+
+      <pre><code>@misc{ctrll2o2026iros,
+  title        = {Learning-to-Optimize for Control in Robotics},
+  author       = {Author Names},
+  year         = {2026},
+  howpublished = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) Tutorial},
+  url          = {https://ctrl-l2o-iros2026.github.io/Ctrl-L2O-IROS2026/}
+}</code></pre>
     </section>
   </main>
 
   <footer>
-    Learning-to-Optimize for Robotics — IROS 2026
+    Learning-to-Optimize for Control in Robotics | IROS 2026
   </footer>
 </body>
 </html>
