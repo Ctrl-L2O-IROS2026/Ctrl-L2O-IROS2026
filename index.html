@@ -156,6 +156,38 @@
       margin-top: 26px;
     }
 
+    .talk-list {
+      margin-top: 26px;
+    }
+
+    .talk {
+      padding: 30px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .talk:first-child {
+      padding-top: 0;
+    }
+
+    .talk h3 {
+      margin: 0 0 6px;
+    }
+
+    .talk h4 {
+      margin: 24px 0 8px;
+      color: #102a43;
+      font-size: 18px;
+    }
+
+    .talk p {
+      margin: 0;
+    }
+
+    .speaker-meta {
+      color: #52606d;
+      font-size: 17px;
+    }
+
     .panel {
       padding: 22px;
       border: 1px solid #e5e7eb;
@@ -173,6 +205,7 @@
 
     .schedule {
       width: 100%;
+      min-width: 760px;
       border-collapse: collapse;
       font-size: 17px;
       line-height: 1.5;
@@ -244,12 +277,9 @@
   <nav>
     <a href="#overview">Overview</a>
     <a href="#schedule">Schedule</a>
-    <a href="#contents">Contents</a>
-    <a href="#notebooks">Notebooks</a>
-    <a href="#slides">Slides</a>
-    <a href="#toolbox">Toolbox</a>
+    <a href="#contents">Tutorial Contents</a>
+    <a href="#materials">Materials</a>
     <a href="#organizers">Organizers</a>
-    <a href="#citation">Citation</a>
   </nav>
 
   <header>
@@ -265,7 +295,7 @@
 
       <div class="hero-actions">
         <a class="button primary" href="#schedule">View schedule</a>
-        <a class="button" href="#notebooks">Hands-on materials</a>
+        <a class="button" href="#contents">Tutorial Contents</a>
       </div>
     </div>
   </header>
@@ -290,66 +320,49 @@
         such as MuJoCo.
       </p>
 
-      <div class="info-grid">
-        <div class="panel">
-          <span class="tag">Format</span>
-          <h3>3-hour tutorial</h3>
-          <p>
-            Two one-hour sessions, each combining lecture material and coding
-            exercises, separated by a 30-minute break.
-          </p>
-        </div>
-
-        <div class="panel">
-          <span class="tag">Software</span>
-          <h3>Ctrl-L2O</h3>
-          <p>
-            Learning-to-optimize tools for robotic control, including examples
-            for MPC, MPPI, and adaptive parameter tuning.
-          </p>
-        </div>
-
-        <div class="panel">
-          <span class="tag">Audience</span>
-          <h3>Robotics, control, and ML</h3>
-          <p>
-            Designed for attendees interested in optimization-based control,
-            differentiable optimization, and deployable robotic learning.
-          </p>
-        </div>
-      </div>
     </section>
 
     <section id="schedule">
       <h2>Tentative Schedule</h2>
 
       <table class="schedule">
+        <colgroup>
+          <col style="width: 18%">
+          <col style="width: 30%">
+          <col style="width: 52%">
+        </colgroup>
         <thead>
           <tr>
             <th>Time</th>
-            <th>Session</th>
-            <th>Objective</th>
-            <th>Key Points</th>
+            <th>Speaker</th>
+            <th>Talks</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>0:00-1:00</td>
-            <td><strong>Part I: Foundations of L2O for Optimization and Control</strong></td>
-            <td>Establish fundamental background for the rest of the tutorial.</td>
-            <td>MPC and MPPI, parametric optimization, L2O formulations and techniques.</td>
+            <td><em> Viet-Anh Le </em></td>
+            <td><strong>Learning-to-Optimize and Its Applications in Control</strong></td>
           </tr>
           <tr>
             <td>1:00-1:30</td>
+            <td>&mdash;</td>
             <td><strong>Coffee Break</strong></td>
-            <td>Informal Q&amp;A and networking.</td>
-            <td>Discussion with organizers and participants.</td>
           </tr>
           <tr>
             <td>1:30-2:30</td>
-            <td><strong>Part II: Applications of L2O for Control in Robotics</strong></td>
-            <td>Show L2O applications in different robotic control problems.</td>
-            <td>Real-time MPC, MPPI sampling, learning-to-adapt, and automatic parameter tuning.</td>
+            <td><em>Yorie Nakahira</em></td>
+            <td><strong>(TBA)</strong></td>
+          </tr>
+          <tr>
+            <td>2:30-3:00</td>
+            <td>&mdash;</td>
+            <td><strong>Coffee Break</strong></td>
+          </tr>
+          <tr>
+            <td>3:00-4:00</td>
+            <td>Speaker 3 <em>(TBA)</em></td>
+            <td><strong>(TBA)</strong></td>
           </tr>
         </tbody>
       </table>
@@ -358,45 +371,37 @@
     <section id="contents">
       <h2>Tutorial Contents</h2>
 
-      <h3>Part I: Introduction and Foundations</h3>
-      <ul>
-        <li>Opening remarks and tutorial goals.</li>
-        <li>Why optimization is central to modern robotic control.</li>
-        <li>Why real-time control and adaptation create computational bottlenecks.</li>
-        <li>Parametric optimization as a unifying view for MPC, MPPI, and L2O.</li>
-        <li>Introduction to the Ctrl-L2O software toolbox.</li>
-      </ul>
+      <div class="talk-list">
+        <article class="talk">
+          <h3>Learning-to-Optimize and Its Applications in Control</h3>
+          <p class="speaker-meta">Viet-Anh Le <em>(Postdoctoral Researcher, University of Pennsylvania)</em></p>
+          <h4>Abstract</h4>
+          <p>This talk introduces learning-to-optimize (L2O) through the lens of parametric optimization for robotic control. It covers model predictive control (MPC), model predictive path integral control (MPPI), and core L2O formulations, including learned solution maps, warm starts, algorithm unrolling, and differentiable optimization.</p>
+          <h4>Biography</h4>
+          <p>Speaker biography to be announced.</p>
+        </article>
 
-      <h3>Preliminaries on MPC and MPPI Control</h3>
-      <ul>
-        <li>Model predictive control and common MPC solver toolboxes.</li>
-        <li>Sampling-based MPC and model predictive path integral control.</li>
-        <li>Coding tutorial 1: MPC with numerical solvers and sampling-based methods.</li>
-      </ul>
+        <article class="talk">
+          <h3>TBA</h3>
+          <p class="speaker-meta">Yorie Nakahira <em>(Assistant Professor, Carnegie Mellon University)</em></p>
+          <h4>Abstract</h4>
+          <p>(TBA)</p>
+          <h4>Biography</h4>
+          <p>Speaker biography to be announced.</p>
+        </article>
 
-      <h3>L2O Methodologies for Parametric Optimization</h3>
-      <ul>
-        <li>Supervised and self-supervised learning for optimization.</li>
-        <li>Learning parametric solution maps and warm starts.</li>
-        <li>Algorithm unrolling and differentiable optimization layers.</li>
-        <li>Fixed-point and KKT-based differentiation.</li>
-        <li>Feasibility restoration and constraint handling.</li>
-        <li>Coding tutorial 2: Synthetic L2O examples for parametric optimization.</li>
-      </ul>
-
-      <h3>Part II: Applications in Control and Robotics</h3>
-      <ul>
-        <li>L2O for real-time MPC and warm-started numerical optimization.</li>
-        <li>Learning components that simplify mixed-integer or structured control problems.</li>
-        <li>L2O for MPPI and learned sampling distributions.</li>
-        <li>Learning terminal costs and constraints through sampling.</li>
-        <li>Learning-to-adapt nonlinear MPC parameters with Bayesian optimization.</li>
-        <li>Automatic tuning of linear MPC to approximate nonlinear MPC behavior.</li>
-        <li>Coding tutorial 3: Robotic demonstrations with Ctrl-L2O.</li>
-      </ul>
+        <article class="talk">
+          <h3>TBA</h3>
+          <p class="speaker-meta">Speaker 3 <em>(TBA)</em></p>
+          <h4>Abstract</h4>
+          <p></p>
+          <h4>Biography</h4>
+          <p>Speaker biography to be announced.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="notebooks">
+    <!-- <section id="notebooks">
       <h2>Hands-on Notebooks</h2>
 
       <p>
@@ -433,37 +438,20 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="slides">
-      <h2>Slides</h2>
+    <section id="materials">
+      <h2>Materials</h2>
 
       <p>
-        Slides will be posted before the tutorial. The planned slide modules
-        follow the lecture and coding structure above.
+        Slides, software toolboxes, and notebooks for the talks will be posted before the tutorial.
       </p>
 
       <ul>
-        <li>Part I slides: Foundations of L2O for optimization and control.</li>
+        <!-- <li>Part I slides: Foundations of L2O for optimization and control.</li>
         <li>Part II slides: Applications of L2O in control and robotics.</li>
-        <li>Hands-on slides: Setup, notebooks, and software demonstrations.</li>
+        <li>Hands-on slides: Setup, notebooks, and software demonstrations.</li> -->
       </ul>
-    </section>
-
-    <section id="toolbox">
-      <h2>Software Toolbox</h2>
-
-      <p>
-        Ctrl-L2O is the companion software toolbox for the tutorial. It is
-        planned to provide learning-to-optimize tools for robotic control,
-        including examples for real-time MPC, MPPI, learning-to-adapt, and
-        automatic controller parameter tuning.
-      </p>
-
-      <p>
-        Installation instructions, dependencies, and reproducible environments
-        will be added as the software materials are prepared.
-      </p>
     </section>
 
     <section id="organizers">
@@ -485,19 +473,7 @@
       </p>
     </section>
 
-    <section id="citation">
-      <h2>Citation</h2>
 
-      <p>If you find these materials useful, please cite the tutorial:</p>
-
-      <pre><code>@misc{ctrll2o2026iros,
-  title        = {Learning-to-Optimize for Control in Robotics},
-  author       = {Author Names},
-  year         = {2026},
-  howpublished = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) Tutorial},
-  url          = {https://ctrl-l2o-iros2026.github.io/Ctrl-L2O-IROS2026/}
-}</code></pre>
-    </section>
   </main>
 
   <footer>
