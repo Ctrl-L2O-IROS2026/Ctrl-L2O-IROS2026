@@ -188,6 +188,22 @@
       font-size: 17px;
     }
 
+    .speaker-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 6px;
+    }
+
+    .speaker-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 20%;
+      flex-shrink: 0;
+    }
+
     .panel {
       padding: 22px;
       border: 1px solid #e5e7eb;
@@ -340,27 +356,32 @@
         </thead>
         <tbody>
           <tr>
-            <td>0:00-1:00</td>
+            <td>1:30-1:45</td>
+            <td><em> Rahul Mangharam </em></td>
+            <td><strong>Openings</strong></td>
+          </tr>
+          <tr>
+            <td>1:45-2:45</td>
             <td><em> Viet-Anh Le </em></td>
             <td><strong>Learning-to-Optimize and Its Applications in Control</strong></td>
           </tr>
           <tr>
-            <td>1:00-1:30</td>
-            <td>&mdash;</td>
-            <td><strong>Coffee Break</strong></td>
-          </tr>
-          <tr>
-            <td>1:30-2:30</td>
-            <td><em>Yorie Nakahira</em></td>
-            <td><strong>(TBA)</strong></td>
-          </tr>
-          <tr>
-            <td>2:30-3:00</td>
+            <td>2:45-3:00</td>
             <td>&mdash;</td>
             <td><strong>Coffee Break</strong></td>
           </tr>
           <tr>
             <td>3:00-4:00</td>
+            <td><em>Yorie Nakahira</em></td>
+            <td><strong>Learning Safe and Adaptive Autonomy: Uncertainty, Language, and Human-AI Alignment</strong></td>
+          </tr>
+          <tr>
+            <td>4:00-4:30</td>
+            <td>&mdash;</td>
+            <td><strong>Coffee Break</strong></td>
+          </tr>
+          <tr>
+            <td>4:30-5:30</td>
             <td>Speaker 3 <em>(TBA)</em></td>
             <td><strong>(TBA)</strong></td>
           </tr>
@@ -373,21 +394,55 @@
 
       <div class="talk-list">
         <article class="talk">
-          <h3>Learning-to-Optimize and Its Applications in Control</h3>
-          <p class="speaker-meta">Viet-Anh Le <em>(Postdoctoral Researcher, University of Pennsylvania)</em></p>
+          <div class="speaker-header">
+            <img class="speaker-photo" src="assets/vietanhle.jpg" alt="Viet-Anh Le">
+            <div>
+              <h3>Learning-to-Optimize and Its Applications in Control</h3>
+              <p class="speaker-meta">Viet-Anh Le <em>(Postdoctoral Researcher, University of Pennsylvania)</em></p>
+            </div>
+          </div>
           <h4>Abstract</h4>
-          <p>This talk introduces learning-to-optimize (L2O) through the lens of parametric optimization for robotic control. It covers model predictive control (MPC), model predictive path integral control (MPPI), and core L2O formulations, including learned solution maps, warm starts, algorithm unrolling, and differentiable optimization.</p>
+          <p>
+          This tutorial introduces learning-to-optimize (L2O) through the lens of parametric optimization for control and robotics. 
+          We begin with model predictive control (MPC) and trajectory optimization as motivating examples, highlighting the computational challenges that arise when optimization problems must be solved repeatedly in real time. 
+          In the first part of the tutorial, we introduce the fundamental concepts of L2O and their integration with traditional optimization methods. We then present core L2O concepts, including learning parametric solution maps through supervised learning and self-supervised learning, neural warm starts, algorithm unrolling, and differentiable optimization layers. 
+          Particular emphasis is placed on how learning can be integrated with, rather than replace, optimization algorithms to improve computational efficiency while retaining model structure and constraints. 
+          The tutorial will discuss L2O approaches for continuous and mixed-integer optimization, as well as learning sampling distributions and solver parameters for sampling-based control. 
+          Through representative examples in robotic navigation, trajectory optimization, contact-rich manipulation, and locomotion, we illustrate how L2O can accelerate optimization and enable real-time control of complex dynamical systems. 
+          The tutorial concludes with emerging directions in differentiable control, scientific machine learning, and generalizable optimization policies.
+          </p>
           <h4>Biography</h4>
-          <p>Speaker biography to be announced.</p>
+          <p>
+          Viet-Anh Le is a postdoctoral researcher at the Department of Electrical and Systems Engineering, University of Pennsylvania, PA, USA. 
+          He received the PhD degree in Mechanical Engineering from the University of Delaware in 2025, the MSc degree in Informatics from Northern Arizona University in 2021, and the BSc degree in Automation and Control Engineering (talented program) from Hanoi University of Science and Technology, Vietnam in 2019, respectively. 
+          From September 2023 to August 2025, he was a visiting graduate scholar in System Engineering at Cornell University, and from June to August 2023, he was a research intern at Honda Research Institute USA. 
+          His current research interests include Learning for Control and Optimization, Model Predictive Control, Distributed Optimization, and Multi-agent Systems.
+          </p>
         </article>
 
         <article class="talk">
-          <h3>TBA</h3>
-          <p class="speaker-meta">Yorie Nakahira <em>(Assistant Professor, Carnegie Mellon University)</em></p>
+          <div class="speaker-header">
+            <img class="speaker-photo" src="assets/nakahira.jpg" alt="Yorie Nakahira">
+            <div>
+              <h3>Learning Safe and Adaptive Autonomy: Uncertainty, Language, and Human-AI Alignment</h3>
+              <p class="speaker-meta">Yorie Nakahira <em>(Assistant Professor, Carnegie Mellon University)</em></p>
+            </div>
+          </div>
           <h4>Abstract</h4>
-          <p>(TBA)</p>
+          <p>This seminar introduces our recent work in stochastic safe control, uncertainty and risk quantification, language-guided control, and multi-agent interaction. 
+            First, we consider safe control for systems with latent risks, where hidden variables can make the dynamics partially unidentifiable and induce spurious distribution shifts between offline and online statistics. To address these challenges, we develop data-driven techniques for quantifying risk and providing safety guarantees despite latent uncertainty and distribution shifts. Our framework establishes the first bridge between safe control and causal inference.
+            Second, we present our work on uncertainty quantification and neural network fine tuning. At the core of our approach are analytic solutions for the moments of random variables passed through nonlinear activation functions. These solutions enable sample-free uncertainty quantification and one-pass fine-tuning without iterative gradient computation.
+            Finally, we introduce our work on language-guided planning, control, and safety certificates. These results show how natural language can specify and execute robot tasks, guide diffusion planners with probabilistic guarantees, and adapt safety certificates to humans’ perceived risks. These interactions reveal an underexplored opportunity to proactively shape desirable opponent adaptations to improve lifelong performance, safety, and human-AI alignment.
+          </p>
           <h4>Biography</h4>
-          <p>Speaker biography to be announced.</p>
+          <p>
+          Yorie Nakahira is an Associate Professor in the Department of Electrical and Computer Engineering at Carnegie Mellon University. 
+          She received a B.E. in Control and Systems Engineering from Tokyo Institute of Technology and a Ph.D. in Control and Dynamical Systems from California Institute of Technology. 
+          Her research goal is to develop control and learning techniques that enhance the capabilities of autonomous systems. 
+          On the algorithm side, her group studies robust and safe control, uncertainty and risk quantification, adaptation algorithms, and language-guided control. 
+          On the application side, her group explores diverse topics, ranging from autonomous control systems to human sensorimotor control to poverty alleviation policy design. 
+          She has received four young investigator awards, including NSF CAREER, and holds a part-time position at the Research and Development Center for Large Language Models.
+          </p>
         </article>
 
         <article class="talk">
