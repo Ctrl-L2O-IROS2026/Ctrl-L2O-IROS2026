@@ -204,6 +204,46 @@
       flex-shrink: 0;
     }
 
+    .organizer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+      margin-top: 26px;
+      text-align: center;
+    }
+
+    .organizer-photo {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 50% 20%;
+    }
+
+    .sponsor-logos {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin-top: 22px;
+    }
+
+    .sponsor-logos img {
+      height: 240px;
+      width: auto;
+    }
+
+    .organizer-card h3 {
+      margin: 0 0 4px;
+      font-size: 20px;
+    }
+
+    .organizer-card p {
+      margin: 0;
+      color: #52606d;
+      font-size: 16px;
+    }
+
     .panel {
       padding: 22px;
       border: 1px solid #e5e7eb;
@@ -405,7 +445,8 @@
           <p>
           This tutorial introduces learning-to-optimize (L2O) through the lens of parametric optimization for control and robotics. 
           We begin with model predictive control (MPC) and trajectory optimization as motivating examples, highlighting the computational challenges that arise when optimization problems must be solved repeatedly in real time. 
-          In the first part of the tutorial, we introduce the fundamental concepts of L2O and their integration with traditional optimization methods. We then present core L2O concepts, including learning parametric solution maps through supervised learning and self-supervised learning, neural warm starts, algorithm unrolling, and differentiable optimization layers. 
+          In the first part of the tutorial, we introduce the fundamental concepts of L2O and their integration with traditional optimization methods. 
+          We then present core L2O concepts, including learning parametric solution maps through supervised learning and self-supervised learning, neural warm starts, algorithm unrolling, and differentiable optimization layers. 
           Particular emphasis is placed on how learning can be integrated with, rather than replace, optimization algorithms to improve computational efficiency while retaining model structure and constraints. 
           The tutorial will discuss L2O approaches for continuous and mixed-integer optimization, as well as learning sampling distributions and solver parameters for sampling-based control. 
           Through representative examples in robotic navigation, trajectory optimization, contact-rich manipulation, and locomotion, we illustrate how L2O can accelerate optimization and enable real-time control of complex dynamical systems. 
@@ -425,7 +466,7 @@
             <img class="speaker-photo" src="assets/nakahira.jpg" alt="Yorie Nakahira">
             <div>
               <h3>Learning Safe and Adaptive Autonomy: Uncertainty, Language, and Human-AI Alignment</h3>
-              <p class="speaker-meta">Yorie Nakahira <em>(Assistant Professor, Carnegie Mellon University)</em></p>
+              <p class="speaker-meta">Yorie Nakahira <em>(Associate Professor, Carnegie Mellon University)</em></p>
             </div>
           </div>
           <h4>Abstract</h4>
@@ -512,20 +553,41 @@
     <section id="organizers">
       <h2>Organizers</h2>
 
-      <p>
-        Organizer names, affiliations, and contact information will be added
-        here.
-      </p>
+      <div class="organizer-grid">
+        <div class="organizer-card">
+          <img class="organizer-photo" src="assets/rahul.jpg" alt="Rahul Mangharam">
+          <h3>Rahul Mangharam</h3>
+          <p>Professor, University of Pennsylvania</p>
+        </div>
+
+        <div class="organizer-card">
+          <img class="organizer-photo" src="assets/vietanhle.jpg" alt="Viet-Anh Le">
+          <h3>Viet-Anh Le</h3>
+          <p>Postdoctoral Researcher, University of Pennsylvania</p>
+        </div>
+
+        <div class="organizer-card">
+          <img class="organizer-photo" src="assets/nakahira.jpg" alt="Yorie Nakahira">
+          <h3>Yorie Nakahira</h3>
+          <p>Associate Professor, Carnegie Mellon University</p>
+        </div>
+      </div>
     </section>
 
     <section id="acknowledgments">
       <h2>Acknowledgments</h2>
 
       <p>
-        This tutorial is being developed for the IEEE/RSJ International
-        Conference on Intelligent Robots and Systems (IROS) 2026. Additional
-        acknowledgments will be added as the tutorial materials are finalized.
+        We gratefully acknowledge the sponsorship of the
+        <strong><a href="https://ieee-ras-robot-control.github.io/" target="_blank" rel="noopener">IEEE RAS Technical Committee on Robot Control</a></strong>.
       </p>
+
+      <div class="sponsor-logos">
+        <a href="https://ieee-ras-robot-control.github.io/" target="_blank" rel="noopener">
+          <img src="assets/TC_RC.png" alt="IEEE RAS Technical Committee on Robot Control logo">
+        </a>
+        <img src="assets/IROS.png" alt="IROS 2026 logo">
+      </div>
     </section>
 
 
